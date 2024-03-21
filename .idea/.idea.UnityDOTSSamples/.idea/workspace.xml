@@ -5,31 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="015eae02-cf3f-4fde-b641-d0d0be5c8b5e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/BotAuthoring.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/BotAuthoring.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/BucketAuthoring.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/BucketAuthoring.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/ConfigAuthoring.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/ConfigAuthoring.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/GroundCellAuthoring.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/GroundCellAuthoring.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/PondAuthoring.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/PondAuthoring.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Components/Douser.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Components/Douser.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Components/Filler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Components/Filler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Components/RepositionLine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Components/RepositionLine.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Components/TeamID.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Components/TeamID.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/SharedStaticData.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/SharedStaticData/HeapMap.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/SharedStaticData/HeapMap.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Systems/SpawnSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Systems/SpawnSystem.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Firefighters/Step 1/SpawnSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Firefighters/Step 1/SpawnSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Firefighters/Step 1/Subscenes/Firefighters_Step1Subscene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Firefighters/Step 1/Subscenes/Firefighters_Step1Subscene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Common/ExecuteSystems.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Common/ExecuteSystems.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step2Opt/Systems/HeatSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step2Opt/Systems/HeatSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityDOTSSamples/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityDOTSSamples/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Firefighters/Step 2/Subscenes/Firefighters_Step2Subscene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Firefighters/Step 2/Subscenes/Firefighters_Step2Subscene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/ConfigAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/ConfigAuthoring.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +29,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/PondAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.8.12/Tests/Runtime/BurstJobTester.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.8.12/Tests/Runtime/Shared/084-Loops.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@1.0.16/Unity.Entities.Editor/Archetypes/ArchetypesWindow.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@1.0.16/Unity.Entities.Editor/Hierarchy/HierarchyWindow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@1.0.16/Unity.Entities.Hybrid/Baking/Baker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@1.0.16/Unity.Entities.Hybrid/Baking/TransformUsageFlags.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@1.0.16/Unity.Entities/Stubs/Unity/Debug.cs" root0="SKIP_HIGHLIGHTING" />
@@ -135,7 +119,7 @@
       <workItem from="1710752907807" duration="4596000" />
       <workItem from="1710764288665" duration="2989000" />
       <workItem from="1710769462934" duration="1556000" />
-      <workItem from="1710920270587" duration="11721000" />
+      <workItem from="1710920270587" duration="19711000" />
     </task>
     <servers />
   </component>
@@ -146,24 +130,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Systems/SpawnSystem.cs</url>
-          <line>185</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Systems/SpawnSystem.cs" initialLine="185" containingFunctionPresentation="Method 'OnStopRunning'">
-            <startOffsets>
-              <option value="8445" />
-            </startOffsets>
-            <endOffsets>
-              <option value="8486" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

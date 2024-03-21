@@ -24,15 +24,15 @@ namespace FirefightersOptimized.Authorings
         [Range(1.2f,1.5f)]public float BucketFullScale = 1.5f;
 
         [Header("Ground")] 
-        [Range(10, 100)]public int GroundNumColumns =30;
-        [Range(10, 100)]public int GroundNumRows = 50;
+        [Range(10, 200)]public int GroundNumColumns =30;
+        [Range(10, 200)]public int GroundNumRows = 50;
 
         [Header("Heat")] 
         public Color MinHeatColor;
         public Color MaxHeatColor;
         [Range(0.01f,0.05f)]public float HeatSpreadSpeed = 0.03f;
         [Range(0.1f,0.5f)]public float HeatOscillationScale = 0.2f;
-        [Range(1, 10)]public int NumInitialCellsOnFire = 1;
+        [Range(1, 100)]public int NumInitialCellsOnFire = 1;
         [Range(0.3f, 1.0f)]public float HeatDouseTargetMin = 0.3f;
 
         [Header("Prefabs")] 
