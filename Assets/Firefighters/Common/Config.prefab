@@ -49,6 +49,8 @@ MonoBehaviour:
   ExecuteBotSystem: 0
   ExecuteBucketSystem: 0
   ExecuteTeamSystem: 0
+  ExecuteUISystem: 0
+  ExecuteAnimationSystem: 0
 --- !u!114 &7709179001885154505
 MonoBehaviour:
   m_ObjectHideFlags: 0

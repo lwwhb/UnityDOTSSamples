@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="015eae02-cf3f-4fde-b641-d0d0be5c8b5e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/BotAuthoring.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/BotAuthoring.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/BucketAuthoring.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/BucketAuthoring.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/ConfigAuthoring.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/ConfigAuthoring.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/GroundCellAuthoring.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/GroundCellAuthoring.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/PondAuthoring.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/PondAuthoring.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Components/Douser.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Components/Douser.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Components/Filler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Components/Filler.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Components/RepositionLine.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Components/RepositionLine.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Components/TeamID.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Components/TeamID.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/SharedStaticData.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/SharedStaticData/HeapMap.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/SharedStaticData/HeapMap.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Systems/SpawnSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Systems/SpawnSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Firefighters/Step 1/SpawnSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Firefighters/Step 1/SpawnSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Firefighters/Step 1/Subscenes/Firefighters_Step1Subscene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Firefighters/Step 1/Subscenes/Firefighters_Step1Subscene.unity" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../AndroidSymbolShrinker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/PondAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.8.12/Tests/Runtime/BurstJobTester.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.8.12/Tests/Runtime/Shared/084-Loops.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@1.0.16/Unity.Entities.Hybrid/Baking/Baker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@1.0.16/Unity.Entities.Hybrid/Baking/TransformUsageFlags.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@1.0.16/Unity.Entities/Stubs/Unity/Debug.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2dZpjFJgMtHmGcdyUoNSvj3cRQc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "/Users/haibowang/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
+      "/Users/haibowang/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache",
+      "/Users/haibowang/.local/share/Symbols/src"
+    ]
+  }
+}]]></component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2022.3.21f1/Unity.app/Contents/MacOS/Unity" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath $PROJECT_DIR$ -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2022.3.21f1/Unity.app/Contents/MacOS/Unity" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath $PROJECT_DIR$ -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="87630">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" value="87630" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="015eae02-cf3f-4fde-b641-d0d0be5c8b5e" name="Changes" comment="" />
+      <created>1710225588537</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710225588537</updated>
+      <workItem from="1710225593286" duration="3000" />
+      <workItem from="1710225608441" duration="174000" />
+      <workItem from="1710743608871" duration="2212000" />
+      <workItem from="1710752034543" duration="382000" />
+      <workItem from="1710752907807" duration="4596000" />
+      <workItem from="1710764288665" duration="2989000" />
+      <workItem from="1710769462934" duration="1556000" />
+      <workItem from="1710920270587" duration="11721000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Systems/SpawnSystem.cs</url>
+          <line>185</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Systems/SpawnSystem.cs" initialLine="185" containingFunctionPresentation="Method 'OnStopRunning'">
+            <startOffsets>
+              <option value="8445" />
+            </startOffsets>
+            <endOffsets>
+              <option value="8486" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

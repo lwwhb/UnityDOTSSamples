@@ -1,12 +1,14 @@
-﻿using Unity.Burst;
+using FirefightersOptimized.Authorings;
+using FirefightersOptimized.Components;
+using FirefightersOptimized.SharedStaticData;
+using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Rendering;
 using Unity.Transforms;
 using Random = Unity.Mathematics.Random;
-
-namespace Tutorials.Firefighters
+namespace FirefightersOptimized.Systems
 {
     public partial struct SpawnSystem : ISystem
     {
@@ -20,13 +22,11 @@ namespace Tutorials.Firefighters
         public void OnUpdate(ref SystemState state)
         {
             state.Enabled = false;
-
             var config = SystemAPI.GetSingleton<Config>();
             var rand = new Random(123);
-
-            var bucketEntities = new NativeArray<Entity>(config.NumBuckets, Allocator.Temp);
             
-            // spawn buckets
+            var bucketEntities = new NativeArray<Entity>(config.NumBuckets, Allocator.Temp);
+            // 生成桶
             {
                 // struct components are returned and passed by value (as copies)!
                 var bucketTransform = state.EntityManager.GetComponentData<LocalTransform>(config.BucketPrefab);
@@ -44,28 +44,23 @@ namespace Tutorials.Firefighters
                     state.EntityManager.SetComponentData(bucketEntity, bucketTransform);
                 }
             }
-
-            // spawn teams
+            // 生成队伍
             {
                 int numBotsPerTeam = config.NumPassersPerTeam + 1;
                 int douserIdx = (config.NumPassersPerTeam / 2);
                 for (int teamIdx = 0; teamIdx < config.NumTeams; teamIdx++)
                 {
                     var teamEntity = state.EntityManager.CreateEntity();
-                    var team = new Team
-                    {
-                        Bucket = bucketEntities[teamIdx]
-                    };
+                    state.EntityManager.SetSharedComponent(bucketEntities[teamIdx], new TeamID(){ teamId = teamIdx });
                     state.EntityManager.AddComponent<RepositionLine>(teamEntity);
-                    var memberBuffer = state.EntityManager.AddBuffer<TeamMember>(teamEntity);
-                    memberBuffer.Capacity = numBotsPerTeam;
+                    
                     var teamColor = new float4(rand.NextFloat3(), 1);
-
-                    // spawn bots
+                    var botEntities = new NativeArray<Entity>(numBotsPerTeam, Allocator.Temp);
+                    // 生成队伍中的机器人
                     for (int botIdx = 0; botIdx < numBotsPerTeam; botIdx++)
                     {
                         var botEntity = state.EntityManager.Instantiate(config.BotPrefab);
-
+                        botEntities[botIdx] = botEntity;
                         var x = rand.NextFloat(0.5f, config.GroundNumColumns - 0.5f);
                         var z = rand.NextFloat(0.5f, config.GroundNumRows - 0.5f);
 
@@ -74,43 +69,43 @@ namespace Tutorials.Firefighters
                         {
                             Value = teamColor
                         });
-
-                        // designate the filler
+                        state.EntityManager.SetSharedComponent(botEntity, new TeamID(){ teamId = teamIdx });
+                        
                         if (botIdx == 0)
                         {
-                            team.Filler = botEntity;
-                        }
-
-                        memberBuffer.Add(new TeamMember { Bot = botEntity });
-                    }
-
-                    // connect each bot to the next in line, forming a passing ring
-                    for (int botIdx = 0; botIdx < memberBuffer.Length; botIdx++)
-                    {
-                        Entity nextBot;
-                        if (botIdx == memberBuffer.Length - 1)
-                        {
-                            nextBot = memberBuffer[0].Bot;   // next is filler
+                            // 指定队伍的取水者
+                            state.EntityManager.AddComponent<Filler>(botEntity);
                         }
                         else
                         {
-                            nextBot = memberBuffer[botIdx + 1].Bot;
+                            //构建索引链
+                            Entity preBot = botEntities[botIdx - 1];
+                            Entity currentBot = botEntities[botIdx];
+                            if (botIdx == numBotsPerTeam - 1)
+                            {
+                                state.EntityManager.SetComponentData(currentBot, new Bot
+                                {
+                                    NextBot = botEntities[0]
+                                });
+                            }
+                            else
+                            {
+                                state.EntityManager.SetComponentData(preBot, new Bot
+                                {
+                                    NextBot = currentBot
+                                });
+                            }
                         }
-
-                        state.EntityManager.SetComponentData(memberBuffer[botIdx].Bot, new Bot
+                        //指定灭火者
+                        if(botIdx == douserIdx)
                         {
-                            NextBot = nextBot,
-                            Team = teamEntity,
-                            IsFiller = (botIdx == 0),
-                            IsDouser = (botIdx == douserIdx),
-                        });
+                            state.EntityManager.AddComponent<Douser>(botEntity);
+                        }
                     }
-
-                    state.EntityManager.AddComponentData(teamEntity, team);
                 }
             }
-
-            // spawn ponds
+            
+            // 生成水塘
             {
                 var bounds = new NativeArray<float4>(4, Allocator.Temp);
 
@@ -142,8 +137,8 @@ namespace Tutorials.Firefighters
                     }
                 }
             }
-
-            // spawn field
+            
+            // 生成场地
             {
                 var groundCellTransform = state.EntityManager.GetComponentData<LocalTransform>(config.GroundCellPrefab);
                 groundCellTransform.Position.y = -(config.GroundCellYScale / 2);
@@ -163,53 +158,16 @@ namespace Tutorials.Firefighters
                     }
                 }
             }
-
-            // spawn heat map
+            
+            // 生成热力图
             {
-                var entity = state.EntityManager.CreateEntity();
-                var heatBuffer = state.EntityManager.AddBuffer<Heat>(entity);
-
-                // init the heat buffer
+                int groundNum = config.GroundNumColumns * config.GroundNumRows;
+                SharedHeapMap.SharedValue.Data = new SharedHeapMap(config.GroundNumColumns * config.GroundNumRows);
+                for (int i = 0; i < config.NumInitialCellsOnFire; i++)
                 {
-                    heatBuffer.Length = config.GroundNumColumns * config.GroundNumRows;
-                    // set every cell to zero
-                    for (int i = 0; i < heatBuffer.Length; i++)
-                    {
-                        heatBuffer[i] = new Heat { Value = 0f };
-                    }
+                    var randomIdx = rand.NextInt(0, groundNum);
+                    SharedHeapMap.SharedValue.Data.heapmap[randomIdx] = 1.0f;
                 }
-
-                // set some random cells on fire
-                {
-                    for (int i = 0; i < config.NumInitialCellsOnFire; i++)
-                    {
-                        var randomIdx = rand.NextInt(0, heatBuffer.Length);
-                        heatBuffer[randomIdx] = new Heat { Value = 1f };
-                    }
-                }
-
-                // Move the ground cells so that their query iteration order corresponds to indexes of the heat buffer.
-                // (As long as the set of entities matched by the query stays the same, the query iteration order will remain the same.
-                // So, this will make it easy/fast to update the color and height of the ground cells from the heat data.)
-                /*{
-                    var x = 0;
-                    var z = 0;
-
-                    foreach (var trans in
-                             SystemAPI.Query<RefRW<LocalTransform>>()
-                                 .WithAll<GroundCell>())
-                    {
-                        trans.ValueRW.Position.x = x + 0.5f;
-                        trans.ValueRW.Position.z = z + 0.5f;
-
-                        x++;
-                        if (x >= config.GroundNumColumns)
-                        {
-                            x = 0;
-                            z++;
-                        }
-                    }
-                }*/
             }
         }
     }

@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3873614480520336895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 261380066554060882}
+  - component: {fileID: 1807857524621112487}
+  m_Layer: 0
+  m_Name: Config
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &261380066554060882
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3873614480520336895}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1807857524621112487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3873614480520336895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896a1542ddce494caaf9d8fd23daa8ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NumPondsPerEdge: 12
+  NumTeams: 1
+  NumPassersPerTeam: 6
+  BotMoveSpeed: 3
+  LineMaxOffset: 4
+  BucketFillRate: 0.2
+  NumBuckets: 15
+  BucketEmptyColor: {r: 1, g: 1, b: 0, a: 1}
+  BucketFullColor: {r: 0, g: 0, b: 1, a: 1}
+  BucketEmptyScale: 0.5
+  BucketFullScale: 1.5
+  GroundNumColumns: 30
+  GroundNumRows: 50
+  MinHeatColor: {r: 0, g: 1, b: 0, a: 1}
+  MaxHeatColor: {r: 1, g: 0, b: 0, a: 1}
+  HeatSpreadSpeed: 0.03
+  HeatOscillationScale: 0.2
+  NumInitialCellsOnFire: 0
+  HeatDouseTargetMin: 0.3
+  BotPrefab: {fileID: 7617736419631500257, guid: 3d7d8f68c19c44b2fbdbfee6b0b55679,
+    type: 3}
+  BucketPrefab: {fileID: 5696387106628140823, guid: 6f0ee328284fd491b849ab528c06266d,
+    type: 3}
+  PondPrefab: {fileID: 7617736419631500257, guid: 69aa0f4313f1e479e8a29b380a46c7c6,
+    type: 3}
+  GroundCellPrefab: {fileID: 3422103013957337004, guid: 184052717b6604667aa96d6593a4b02e,
+    type: 3}
+  BotAnimatedPrefabGO: {fileID: 5701704621631426976, guid: 36e93c435d1648a4c86d516057a9cbe2,
+    type: 3}
