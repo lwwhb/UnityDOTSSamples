@@ -191,7 +191,7 @@ namespace Tutorials.Firefighters
                 // Move the ground cells so that their query iteration order corresponds to indexes of the heat buffer.
                 // (As long as the set of entities matched by the query stays the same, the query iteration order will remain the same.
                 // So, this will make it easy/fast to update the color and height of the ground cells from the heat data.)
-                /*{
+                {
                     var x = 0;
                     var z = 0;
 
@@ -209,7 +209,7 @@ namespace Tutorials.Firefighters
                             z++;
                         }
                     }
-                }*/
+                }
             }
         }
     }

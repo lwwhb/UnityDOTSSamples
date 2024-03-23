@@ -5,13 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="015eae02-cf3f-4fde-b641-d0d0be5c8b5e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Common/ExecuteSystems.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Common/ExecuteSystems.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step2Opt/Systems/HeatSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step2Opt/Systems/HeatSystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step3Opt/Systems.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step3Opt/Systems/BotSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step3Opt/Systems/BotSystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step3Opt/Systems/BucketSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step3Opt/Systems/BucketSystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step3Opt/Systems/LineSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step3Opt/Systems/LineSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityDOTSSamples/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityDOTSSamples/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityDOTSSamples/.idea/copilot/chatSessions/xd.lck" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityDOTSSamples/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityDOTSSamples/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityDOTSSamples/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Firefighters/Step 2/Subscenes/Firefighters_Step2Subscene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Firefighters/Step 2/Subscenes/Firefighters_Step2Subscene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/ConfigAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/ConfigAuthoring.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FirefightersOptimized/Common/ExecuteSystems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Common/ExecuteSystems.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/BotAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/BotAuthoring.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/BucketAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/BucketAuthoring.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Components/TeamID.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Components/TeamID.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Systems/SpawnSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Systems/SpawnSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step2Opt/Systems/HeatSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step2Opt/Systems/HeatSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,16 +33,16 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../AndroidSymbolShrinker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/PondAuthoring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.8.12/Tests/Runtime/BurstJobTester.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.8.12/Tests/Runtime/Shared/084-Loops.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@1.0.16/Unity.Entities.Editor/Archetypes/ArchetypesWindow.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@1.0.16/Unity.Entities.Editor/Archetypes/ArchetypesWindow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@1.0.16/Unity.Entities.Editor/Hierarchy/HierarchyWindow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@1.0.16/Unity.Entities.Hybrid/Baking/Baker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@1.0.16/Unity.Entities.Hybrid/Baking/TransformUsageFlags.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@1.0.16/Unity.Entities/Stubs/Unity/Debug.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@1.0.16/Unity.Entities/SystemBase.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -43,29 +52,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/Users/haibowang/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
-      "/Users/haibowang/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache",
-      "/Users/haibowang/.local/share/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/haibowang/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/haibowang/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache&quot;,
+      &quot;/Users/haibowang/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2022.3.21f1/Unity.app/Contents/MacOS/Unity" />
@@ -93,10 +102,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="87630">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="11842">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="87630" />
+      <option name="pid" value="11842" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -120,6 +129,8 @@
       <workItem from="1710764288665" duration="2989000" />
       <workItem from="1710769462934" duration="1556000" />
       <workItem from="1710920270587" duration="19711000" />
+      <workItem from="1711011303047" duration="6371000" />
+      <workItem from="1711075325671" duration="30687000" />
     </task>
     <servers />
   </component>
@@ -130,5 +141,102 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Firefighters/Step 3/BucketSystem.cs</url>
+          <line>31</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Firefighters/Step 3/BucketSystem.cs" initialLine="31" containingFunctionPresentation="Method 'OnUpdate'">
+            <startOffsets>
+              <option value="1142" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1224" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/FirefightersOptimized/Step3Opt/Systems/BucketSystem.cs</url>
+          <line>34</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step3Opt/Systems/BucketSystem.cs" initialLine="33" containingFunctionPresentation="Method 'OnUpdate'">
+            <startOffsets>
+              <option value="1321" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1386" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/FirefightersOptimized/Step3Opt/Systems/BucketSystem.cs</url>
+          <line>31</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step3Opt/Systems/BucketSystem.cs" initialLine="30" containingFunctionPresentation="Method 'OnUpdate'">
+            <startOffsets>
+              <option value="1133" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1179" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/FirefightersOptimized/Step3Opt/Systems/BucketSystem.cs</url>
+          <line>28</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step3Opt/Systems/BucketSystem.cs" initialLine="27" containingFunctionPresentation="Method 'OnUpdate'">
+            <startOffsets>
+              <option value="892" />
+            </startOffsets>
+            <endOffsets>
+              <option value="995" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/FirefightersOptimized/Step3Opt/Systems/BucketSystem.cs</url>
+          <line>22</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step3Opt/Systems/BucketSystem.cs" initialLine="21" containingFunctionPresentation="Method 'OnUpdate'">
+            <startOffsets>
+              <option value="555" />
+            </startOffsets>
+            <endOffsets>
+              <option value="601" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/FirefightersOptimized/Step3Opt/Systems/BucketSystem.cs</url>
+          <line>16</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step3Opt/Systems/BucketSystem.cs" initialLine="15" containingFunctionPresentation="Method 'OnCreate'">
+            <startOffsets>
+              <option value="413" />
+            </startOffsets>
+            <endOffsets>
+              <option value="446" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/FirefightersOptimized/Step3Opt/Systems/BucketSystem.cs</url>
+          <line>24</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step3Opt/Systems/BucketSystem.cs" initialLine="24" containingFunctionPresentation="Method 'OnUpdate'">
+            <startOffsets>
+              <option value="615" />
+            </startOffsets>
+            <endOffsets>
+              <option value="768" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

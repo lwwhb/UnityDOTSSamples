@@ -1,5 +1,6 @@
 using FirefightersOptimized.Components;
 using Unity.Entities;
+using Unity.Rendering;
 using UnityEngine;
 
 namespace FirefightersOptimized.Authorings
@@ -12,7 +13,7 @@ namespace FirefightersOptimized.Authorings
             {
                 var entity = GetEntity(authoring, TransformUsageFlags.Dynamic);
                 AddComponent<Bucket>(entity);
-                AddSharedComponent(entity, new TeamID {teamId = -1});
+                AddComponent<URPMaterialPropertyBaseColor>(entity);
             }
         }
     }

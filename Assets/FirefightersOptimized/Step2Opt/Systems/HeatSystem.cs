@@ -1,7 +1,5 @@
 using FirefightersOptimized.SharedStaticData;
-using FirefightersOptimized.Systems;
 using Unity.Burst;
-using Unity.Collections;
 using Unity.Entities;
 using Unity.Jobs;
 using Unity.Mathematics;
@@ -9,14 +7,16 @@ using Unity.Rendering;
 using Unity.Transforms;
 using Config = FirefightersOptimized.Authorings.Config;
 using GroundCell = FirefightersOptimized.Authorings.GroundCell;
+using Random = Unity.Mathematics.Random;
 
 namespace FirefightersOptimized.Systems
 {
     [DisableAutoCreation]
-    [UpdateAfter(typeof(SpawnSystem))]
+    [UpdateAfter(typeof(BucketSystem))]
+    [UpdateBefore(typeof(TransformSystemGroup))]
     public partial struct HeatSystem : ISystem
     {
-        [BurstCompile]
+        //[BurstCompile]
         public void OnCreate(ref SystemState state)
         {
             state.RequireForUpdate<Config>();
@@ -30,14 +30,14 @@ namespace FirefightersOptimized.Systems
 
             // simulate the heat spreading
             {
-                HeatSpread_MainThread(ref state, config);
+                //HeatSpread_MainThread(ref state, config);
                 //state.Dependency = HeatSpread_SingleThreadedJob(state.Dependency, ref state, config);
                 //state.Dependency = HeatSpread_ParallelJob(state.Dependency, ref state, config);
             }
 
             // update the colors and heights of the ground cells from the heat data
             {
-                GroundCellUpdate_MainThread(ref state, config);
+                //GroundCellUpdate_MainThread(ref state, config);
                 //state.Dependency = GroundCellUpdate_SingleThreadedJob(state.Dependency, ref state, config);
                 //state.Dependency = GroundCellUpdate_ParallelJob(state.Dependency, ref state, config);
             }
@@ -45,10 +45,10 @@ namespace FirefightersOptimized.Systems
             /*JobHandle handle1 = HeatSpread_SingleThreadedJob(state.Dependency, ref state, config);
             JobHandle handle2 = GroundCellUpdate_SingleThreadedJob(state.Dependency, ref state, config);*/
             
-            /*JobHandle handle1 = HeatSpread_ParallelJob(state.Dependency, ref state, config);
-            JobHandle handle2 = GroundCellUpdate_ParallelJob(state.Dependency, ref state, config);*/
+            JobHandle handle1 = HeatSpread_ParallelJob(state.Dependency, ref state, config);
+            JobHandle handle2 = GroundCellUpdate_ParallelJob(state.Dependency, ref state, config);
             
-            //state.Dependency = JobHandle.CombineDependencies(handle1, handle2);
+            state.Dependency = JobHandle.CombineDependencies(handle1, handle2);
         }
         
         private void HeatSpread_MainThread(ref SystemState state, Config config)
@@ -302,23 +302,23 @@ namespace FirefightersOptimized.Systems
         }
 
         // douse a cell and all surrounding cells
-        /*public static void DouseFire(float2 location, DynamicBuffer<Heat> heatBuffer, int numRows, int numCols)
+        public static void DouseFire(float2 location, int numRows, int numCols)
         {
             int col = (int)location.x;
             int row = (int)location.y;
 
-            DouseCell(row, col, heatBuffer, numRows, numCols);
-            DouseCell(row, col + 1, heatBuffer, numRows, numCols);
-            DouseCell(row, col - 1, heatBuffer, numRows, numCols);
-            DouseCell(row - 1, col, heatBuffer, numRows, numCols);
-            DouseCell(row - 1, col + 1, heatBuffer, numRows, numCols);
-            DouseCell(row - 1, col - 1, heatBuffer, numRows, numCols);
-            DouseCell(row + 1, col, heatBuffer, numRows, numCols);
-            DouseCell(row + 1, col + 1, heatBuffer, numRows, numCols);
-            DouseCell(row + 1, col - 1, heatBuffer, numRows, numCols);
+            DouseCell(row, col, numRows, numCols);
+            DouseCell(row, col + 1, numRows, numCols);
+            DouseCell(row, col - 1, numRows, numCols);
+            DouseCell(row - 1, col, numRows, numCols);
+            DouseCell(row - 1, col + 1, numRows, numCols);
+            DouseCell(row - 1, col - 1, numRows, numCols);
+            DouseCell(row + 1, col, numRows, numCols);
+            DouseCell(row + 1, col + 1, numRows, numCols);
+            DouseCell(row + 1, col - 1, numRows, numCols);
         }
 
-        private static void DouseCell(int row, int col, DynamicBuffer<Heat> heatBuffer, int numRows, int numCols)
+        private static void DouseCell(int row, int col, int numRows, int numCols)
         {
             if (col < 0 || col >= numCols ||
                 row < 0 || row >= numRows)
@@ -326,10 +326,10 @@ namespace FirefightersOptimized.Systems
                 return;
             }
 
-            heatBuffer[row * numCols + col] = new Heat { Value = 0 };
+            SharedHeapMap.SharedValue.Data.heapmap[row * numCols + col] = 0;
         }
 
-        public static float2 NearestFire(float2 location, DynamicBuffer<Heat> heatBuffer, int numRows, int numCols, float minHeat)
+        public static float2 NearestFire(float2 location, int numRows, int numCols, float minHeat)
         {
             var closestFirePos = new float2(0.5f, 0.5f);
             var closestDistSq = float.MaxValue;
@@ -339,7 +339,7 @@ namespace FirefightersOptimized.Systems
             {
                 for (int row = 0; row < numRows; row++)
                 {
-                    if (heatBuffer[row * numCols + col].Value > minHeat) // is cell on fire
+                    if (SharedHeapMap.SharedValue.Data.heapmap[row * numCols + col] > minHeat) // is cell on fire
                     {
                         var firePos = new float2(col + 0.5f, row + 0.5f);
                         var distSq = math.distancesq(location, firePos);
@@ -354,6 +354,6 @@ namespace FirefightersOptimized.Systems
             }
 
             return closestFirePos;
-        }*/
+        }
     }
 }

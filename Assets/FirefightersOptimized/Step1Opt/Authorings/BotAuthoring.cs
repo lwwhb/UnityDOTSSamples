@@ -14,7 +14,6 @@ namespace FirefightersOptimized.Authorings
             {
                 var entity = GetEntity(authoring, TransformUsageFlags.Dynamic);
                 AddComponent<Bot>(entity);
-                AddSharedComponent(entity, new TeamID {teamId = -1});
             }
         }
     }

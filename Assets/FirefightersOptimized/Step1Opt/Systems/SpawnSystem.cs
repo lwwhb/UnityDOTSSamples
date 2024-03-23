@@ -7,6 +7,7 @@ using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Rendering;
 using Unity.Transforms;
+using UnityEngine;
 using Random = Unity.Mathematics.Random;
 namespace FirefightersOptimized.Systems
 {
@@ -51,7 +52,13 @@ namespace FirefightersOptimized.Systems
                 for (int teamIdx = 0; teamIdx < config.NumTeams; teamIdx++)
                 {
                     var teamEntity = state.EntityManager.CreateEntity();
-                    state.EntityManager.SetSharedComponent(bucketEntities[teamIdx], new TeamID(){ teamId = teamIdx });
+                    var team = new Team
+                    {
+                        Id = teamIdx,
+                        Bucket = bucketEntities[teamIdx],
+                        NumFiresDoused = 0
+                    };
+                    state.EntityManager.AddSharedComponent(bucketEntities[teamIdx], new TeamID(){ team = teamEntity});
                     state.EntityManager.AddComponent<RepositionLine>(teamEntity);
                     
                     var teamColor = new float4(rand.NextFloat3(), 1);
@@ -69,7 +76,7 @@ namespace FirefightersOptimized.Systems
                         {
                             Value = teamColor
                         });
-                        state.EntityManager.SetSharedComponent(botEntity, new TeamID(){ teamId = teamIdx });
+                        state.EntityManager.AddSharedComponent(botEntity, new TeamID(){ team = teamEntity });
                         
                         if (botIdx == 0)
                         {
@@ -87,6 +94,10 @@ namespace FirefightersOptimized.Systems
                                 {
                                     NextBot = botEntities[0]
                                 });
+                                state.EntityManager.SetComponentData(preBot, new Bot
+                                {
+                                    NextBot = currentBot
+                                });
                             }
                             else
                             {
@@ -95,13 +106,16 @@ namespace FirefightersOptimized.Systems
                                     NextBot = currentBot
                                 });
                             }
+                            
                         }
+
                         //指定灭火者
                         if(botIdx == douserIdx)
                         {
                             state.EntityManager.AddComponent<Douser>(botEntity);
                         }
                     }
+                    state.EntityManager.AddComponentData(teamEntity, team);
                 }
             }
             
@@ -167,6 +181,27 @@ namespace FirefightersOptimized.Systems
                 {
                     var randomIdx = rand.NextInt(0, groundNum);
                     SharedHeapMap.SharedValue.Data.heapmap[randomIdx] = 1.0f;
+                }
+            }
+            
+            // 设置地面位置
+            {
+                var x = 0;
+                var z = 0;
+
+                foreach (var trans in
+                         SystemAPI.Query<RefRW<LocalTransform>>()
+                             .WithAll<GroundCell>())
+                {
+                    trans.ValueRW.Position.x = x + 0.5f;
+                    trans.ValueRW.Position.z = z + 0.5f;
+
+                    x++;
+                    if (x >= config.GroundNumColumns)
+                    {
+                        x = 0;
+                        z++;
+                    }
                 }
             }
         }

@@ -12,7 +12,7 @@ namespace FirefightersOptimized.Authorings
         [Header("Bots")] 
         [Range(1, 30)]public int NumTeams = 1;
         [Range(4, 60)]public int NumPassersPerTeam = 6;
-        [Range(1, 10)]public int BotMoveSpeed = 3; // units per second
+        [Range(1, 20)]public int BotMoveSpeed = 3; // units per second
         [Range(1, 10)]public float LineMaxOffset = 4;
 
         [Header("Buckets")] 
