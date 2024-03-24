@@ -46,4 +46,9 @@ namespace FirefightersOptimized.Authorings
         MOVE_TO_LINE,
         WAIT_IN_LINE,
     }
+    
+    public class BotAnimation : IComponentData
+    {
+        public GameObject AnimatedGO;   // the GO that is rendered and animated
+    }
 }

@@ -43,6 +43,20 @@ namespace FirefightersOptimized.Common
                 World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<SimulationSystemGroup>()
                     .AddSystemToUpdateList(lineSystem);
             }
+
+            if (ExecuteUISystem)
+            {
+                var uiSystem = World.DefaultGameObjectInjectionWorld.GetOrCreateSystem<UISystem>();
+                World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<SimulationSystemGroup>()
+                    .AddSystemToUpdateList(uiSystem);
+            }
+
+            if (ExecuteAnimationSystem)
+            {
+                var animationSystem = World.DefaultGameObjectInjectionWorld.GetOrCreateSystem<AnimationSystem>();
+                World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<SimulationSystemGroup>()
+                    .AddSystemToUpdateList(animationSystem);
+            }
         }
     }
 }
