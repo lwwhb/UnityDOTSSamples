@@ -5,21 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="015eae02-cf3f-4fde-b641-d0d0be5c8b5e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step4Opt.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step4Opt/Systems.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step4Opt/Systems/AnimationSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step4Opt/Systems/AnimationSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step4Opt/Systems/UISystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step4Opt/Systems/UISystem.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityDOTSSamples/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityDOTSSamples/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityDOTSSamples/.idea/copilot/chatSessions/xd.lck" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityDOTSSamples/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityDOTSSamples/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityDOTSSamples/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FirefightersOptimized/Common/ExecuteSystems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Common/ExecuteSystems.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/BotAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/BotAuthoring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/ConfigAuthoring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Authorings/ConfigAuthoring.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Subscenes/FireFighters_Step1SubceneOpt.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Subscenes/FireFighters_Step1SubceneOpt.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Systems/SpawnSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step1Opt/Systems/SpawnSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step2Opt/Systems/HeatSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FirefightersOptimized/Step2Opt/Systems/HeatSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,10 +96,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="49181">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="49181" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />

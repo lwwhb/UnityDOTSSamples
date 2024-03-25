@@ -17,6 +17,7 @@ namespace FirefightersOptimized.Systems
         public void OnCreate(ref SystemState state)
         {
             state.RequireForUpdate<Config>();
+            state.RequireForUpdate<RandomSingleton>();
         }
 
         [BurstCompile]
@@ -24,11 +25,10 @@ namespace FirefightersOptimized.Systems
         {
             state.Enabled = false;
             var config = SystemAPI.GetSingleton<Config>();
-            var rand = new Random(123);
-            
             var bucketEntities = new NativeArray<Entity>(config.NumBuckets, Allocator.Temp);
             // 生成桶
             {
+                var rand = SystemAPI.GetSingletonRW<RandomSingleton>();
                 // struct components are returned and passed by value (as copies)!
                 var bucketTransform = state.EntityManager.GetComponentData<LocalTransform>(config.BucketPrefab);
                 bucketTransform.Position.y = (bucketTransform.Scale / 2); // will be same for every bucket
@@ -38,8 +38,8 @@ namespace FirefightersOptimized.Systems
                     var bucketEntity = state.EntityManager.Instantiate(config.BucketPrefab);
                     bucketEntities[i] = bucketEntity;
 
-                    bucketTransform.Position.x = rand.NextFloat(0.5f, config.GroundNumColumns - 0.5f);
-                    bucketTransform.Position.z = rand.NextFloat(0.5f, config.GroundNumRows - 0.5f);
+                    bucketTransform.Position.x = rand.ValueRW.random.NextFloat(0.5f, config.GroundNumColumns - 0.5f);
+                    bucketTransform.Position.z = rand.ValueRW.random.NextFloat(0.5f, config.GroundNumRows - 0.5f);
                     bucketTransform.Scale = config.BucketEmptyScale;
 
                     state.EntityManager.SetComponentData(bucketEntity, bucketTransform);
@@ -61,15 +61,17 @@ namespace FirefightersOptimized.Systems
                     state.EntityManager.AddSharedComponent(bucketEntities[teamIdx], new TeamID(){ team = teamEntity});
                     state.EntityManager.AddComponent<RepositionLine>(teamEntity);
                     
-                    var teamColor = new float4(rand.NextFloat3(), 1);
+                    var rand = SystemAPI.GetSingletonRW<RandomSingleton>();
+                    var teamColor = new float4(rand.ValueRW.random.NextFloat3(), 1);
                     var botEntities = new NativeArray<Entity>(numBotsPerTeam, Allocator.Temp);
                     // 生成队伍中的机器人
                     for (int botIdx = 0; botIdx < numBotsPerTeam; botIdx++)
                     {
                         var botEntity = state.EntityManager.Instantiate(config.BotPrefab);
                         botEntities[botIdx] = botEntity;
-                        var x = rand.NextFloat(0.5f, config.GroundNumColumns - 0.5f);
-                        var z = rand.NextFloat(0.5f, config.GroundNumRows - 0.5f);
+                        rand = SystemAPI.GetSingletonRW<RandomSingleton>();
+                        var x = rand.ValueRW.random.NextFloat(0.5f, config.GroundNumColumns - 0.5f);
+                        var z = rand.ValueRW.random.NextFloat(0.5f, config.GroundNumRows - 0.5f);
 
                         state.EntityManager.SetComponentData(botEntity, LocalTransform.FromPosition(x, 1, z));
                         state.EntityManager.SetComponentData(botEntity, new URPMaterialPropertyBaseColor
@@ -135,6 +137,7 @@ namespace FirefightersOptimized.Systems
                 bounds[2] = new float4(-outerMargin, 0.5f, -innerMargin, height - 0.5f); // left
                 bounds[3] = new float4(width + innerMargin, 0.5f, width + outerMargin, height - 0.5f); // right
 
+                var rand = SystemAPI.GetSingletonRW<RandomSingleton>();
                 var pondTransform = state.EntityManager.GetComponentData<LocalTransform>(config.PondPrefab);
                 for (int i = 0; i < 4; i++)
                 {
@@ -144,8 +147,7 @@ namespace FirefightersOptimized.Systems
                     for (int j = 0; j < config.NumPondsPerEdge; j++)
                     {
                         var pondEntity = state.EntityManager.Instantiate(config.PondPrefab);
-
-                        var pos = rand.NextFloat2(bottomLeft, topRight);
+                        var pos = rand.ValueRW.random.NextFloat2(bottomLeft, topRight);
                         pondTransform.Position = new float3(pos.x, 0, pos.y);
                         state.EntityManager.SetComponentData(pondEntity, pondTransform);
                     }
@@ -175,11 +177,12 @@ namespace FirefightersOptimized.Systems
             
             // 生成热力图
             {
+                var rand = SystemAPI.GetSingletonRW<RandomSingleton>();
                 int groundNum = config.GroundNumColumns * config.GroundNumRows;
                 SharedHeapMap.SharedValue.Data = new SharedHeapMap(config.GroundNumColumns * config.GroundNumRows);
                 for (int i = 0; i < config.NumInitialCellsOnFire; i++)
                 {
-                    var randomIdx = rand.NextInt(0, groundNum);
+                    var randomIdx = rand.ValueRW.random.NextInt(0, groundNum);
                     SharedHeapMap.SharedValue.Data.heapmap[randomIdx] = 1.0f;
                 }
             }
