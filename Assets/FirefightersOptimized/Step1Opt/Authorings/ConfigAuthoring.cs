@@ -1,11 +1,14 @@
 using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
-
+using Random = Unity.Mathematics.Random;
 namespace FirefightersOptimized.Authorings
 {
     public class ConfigAuthoring : MonoBehaviour
     {
+        [Header("Random")] 
+        [Range(1, 65535)] public uint Seed = 1;
+        
         [Header("Ponds")] 
         [Range(1, 120)]public int NumPondsPerEdge = 12;
 
@@ -46,6 +49,10 @@ namespace FirefightersOptimized.Authorings
             public override void Bake(ConfigAuthoring authoring)
             {
                 var entity = GetEntity(authoring, TransformUsageFlags.None);
+                AddComponent(entity,new RandomSingleton
+                {
+                    random = new Random(authoring.Seed)
+                });
                 AddComponent(entity, new Config
                 {
                     GroundNumColumns = authoring.GroundNumColumns,
@@ -79,6 +86,12 @@ namespace FirefightersOptimized.Authorings
             }
         }
     }
+    
+    public struct RandomSingleton : IComponentData
+    {
+        public Random random;
+    }
+    
     public struct Config : IComponentData
     {
         public int GroundNumColumns;

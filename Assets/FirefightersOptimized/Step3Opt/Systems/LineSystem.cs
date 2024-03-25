@@ -1,3 +1,4 @@
+using FirefightersOptimized.Authorings;
 using FirefightersOptimized.Components;
 using Unity.Burst;
 using Unity.Collections;
@@ -32,9 +33,9 @@ namespace FirefightersOptimized.Systems
         public void OnUpdate(ref SystemState state)
         {
             var config = SystemAPI.GetSingleton<Config>();
-            var rand = new Random(123 +
-                                  seed++); // seed is incremented to get different random values in different frames
-
+            //var rand = new Random(123 +
+            //                      seed++); // seed is incremented to get different random values in different frames
+            var rand = SystemAPI.GetSingletonRW<RandomSingleton>();
             var pondQuery = SystemAPI.QueryBuilder().WithAll<Pond, LocalTransform>().Build();
             var pondPositions = pondQuery.ToComponentDataArray<LocalTransform>(Allocator.Temp);
             
@@ -48,7 +49,7 @@ namespace FirefightersOptimized.Systems
                 {
                     botQuery.SetSharedComponentFilter(new TeamID { team = teamEntity });
                     var members = botQuery.ToEntityArray(Allocator.Temp);
-                    var randomPondPos = pondPositions[rand.NextInt(pondPositions.Length)].Position.xz;
+                    var randomPondPos = pondPositions[rand.ValueRW.random.NextInt(pondPositions.Length)].Position.xz;
                     var nearestFirePos = HeatSystem.NearestFire(randomPondPos, config.GroundNumRows, config.GroundNumColumns, config.HeatDouseTargetMin);
 
                     int douserIdx = members.Length / 2;
