@@ -48,7 +48,6 @@ namespace FirefightersOptimized.Systems
                             var bucket = SystemAPI.GetComponentRW<Bucket>(team.ValueRO.Bucket);
                             bucket.ValueRW.CarryingBot = botEntity;
                             
-                            bot.ValueRW.Bucket = team.ValueRO.Bucket;
                             bot.ValueRW.TargetPos = bot.ValueRO.LinePos; // was set in TeamSystem
                             bot.ValueRW.State = BotState.MOVE_TO_LINE;
                         }
@@ -57,7 +56,7 @@ namespace FirefightersOptimized.Systems
                     }
                     case BotState.FILL_BUCKET:
                     {
-                        var bucket = SystemAPI.GetComponentRW<Bucket>(bot.ValueRO.Bucket);
+                        var bucket = SystemAPI.GetComponentRW<Bucket>(team.ValueRO.Bucket);
                         var val = fillRate + bucket.ValueRO.Water;
                         if (val < 1.0f) // keep filling
                         {
@@ -76,7 +75,7 @@ namespace FirefightersOptimized.Systems
                         // (only a douser should be put in this state)
                         if (MoveToTarget(ref botTrans.ValueRW, bot.ValueRO.TargetPos, moveSpeed))
                         {
-                            var bucket = SystemAPI.GetComponentRW<Bucket>(bot.ValueRO.Bucket);
+                            var bucket = SystemAPI.GetComponentRW<Bucket>(team.ValueRO.Bucket);
                             bucket.ValueRW.Water = 0;
 
                             HeatSystem.DouseFire(bot.ValueRO.TargetPos, numRows, numCols);
@@ -96,13 +95,8 @@ namespace FirefightersOptimized.Systems
                         var targetPos = SystemAPI.GetComponent<LocalTransform>(bot.ValueRO.NextBot).Position.xz;
                         if (MoveToTarget(ref botTrans.ValueRW, targetPos, moveSpeed))
                         {
-                            var bucket = SystemAPI.GetComponentRW<Bucket>(bot.ValueRO.Bucket);
+                            var bucket = SystemAPI.GetComponentRW<Bucket>(team.ValueRO.Bucket);
                             bucket.ValueRW.CarryingBot = bot.ValueRO.NextBot;
-
-                            var otherBot = SystemAPI.GetComponentRW<Bot>(bot.ValueRO.NextBot);
-                            otherBot.ValueRW.Bucket = bot.ValueRO.Bucket;
-                            
-                            bot.ValueRW.Bucket = Entity.Null;
                             bot.ValueRW.State = BotState.MOVE_TO_LINE;
                         }
 
@@ -119,14 +113,15 @@ namespace FirefightersOptimized.Systems
                     }
                     case BotState.WAIT_IN_LINE:
                     {
-                        if (bot.ValueRO.Bucket == Entity.Null)
+                        var bucket = SystemAPI.GetComponentRW<Bucket>(team.ValueRO.Bucket);
+                        if (bucket.ValueRO.CarryingBot != botEntity)
                         {
                             break;
                         }
 
                         if(team.ValueRO.Filler.Equals(botEntity))
                         {
-                            var bucket = SystemAPI.GetComponentRW<Bucket>(bot.ValueRO.Bucket);
+                      
                             if (bucket.ValueRO.Water < 1)
                             {
                                 bot.ValueRW.State = BotState.FILL_BUCKET;
@@ -141,7 +136,6 @@ namespace FirefightersOptimized.Systems
 
                         if(team.ValueRO.Douser.Equals(botEntity))
                         {
-                            var bucket = SystemAPI.GetComponentRW<Bucket>(bot.ValueRO.Bucket);
                             if (bucket.ValueRO.Water > 0)
                             {
                                 bot.ValueRW.State = BotState.DOUSE_FIRE;

@@ -24,7 +24,6 @@ namespace FirefightersOptimized.Authorings
         public float2 TargetPos;   // Where the bot is moving to.
         public float2 LinePos;     // The bot's place in line where they stand when idle.
         public Entity NextBot;     // The next bot in line (will pass the bucket to this bot).
-        public Entity Bucket;      // The bucket that the bot is carrying.
 
         public readonly bool IsMoving()
         {
