@@ -61,7 +61,7 @@ namespace FirefightersOptimized.Systems
                     for (int i = 0; i < members.Length; i++)
                     {
                         var botEntity = members[i];
-                        if (SystemAPI.HasComponent<Douser>(botEntity))
+                        if (team.ValueRO.Douser.Equals(botEntity))
                         {
                             passerIdx++;
                             var ratio = (float) douserIdx / (douserIdx+1);
@@ -73,7 +73,7 @@ namespace FirefightersOptimized.Systems
                             douser.ValueRW.LinePos = pos + offset;
                             douser.ValueRW.TargetPos = nearestFirePos;
                         }
-                        else if (SystemAPI.HasComponent<Filler>(botEntity))
+                        else if (team.ValueRO.Filler.Equals(botEntity))
                         {
                             var filler = SystemAPI.GetComponentRW<Bot>(botEntity);
                             filler.ValueRW.LinePos = randomPondPos;

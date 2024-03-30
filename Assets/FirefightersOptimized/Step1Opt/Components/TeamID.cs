@@ -11,6 +11,8 @@ namespace FirefightersOptimized.Components
     {
         public int Id;
         public Entity Bucket;
+        public Entity Filler;
+        public Entity Douser;
         public int NumFiresDoused;
     }
 }

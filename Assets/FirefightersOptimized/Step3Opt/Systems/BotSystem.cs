@@ -124,7 +124,7 @@ namespace FirefightersOptimized.Systems
                             break;
                         }
 
-                        if(SystemAPI.HasComponent<Filler>(botEntity))
+                        if(team.ValueRO.Filler.Equals(botEntity))
                         {
                             var bucket = SystemAPI.GetComponentRW<Bucket>(bot.ValueRO.Bucket);
                             if (bucket.ValueRO.Water < 1)
@@ -139,7 +139,7 @@ namespace FirefightersOptimized.Systems
                             break;
                         }
 
-                        if(SystemAPI.HasComponent<Douser>(botEntity))
+                        if(team.ValueRO.Douser.Equals(botEntity))
                         {
                             var bucket = SystemAPI.GetComponentRW<Bucket>(bot.ValueRO.Bucket);
                             if (bucket.ValueRO.Water > 0)

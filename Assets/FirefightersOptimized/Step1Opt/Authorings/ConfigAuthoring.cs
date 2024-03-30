@@ -13,22 +13,22 @@ namespace FirefightersOptimized.Authorings
         [Range(1, 120)]public int NumPondsPerEdge = 12;
 
         [Header("Bots")] 
-        [Range(1, 30)]public int NumTeams = 1;
-        [Range(4, 60)]public int NumPassersPerTeam = 6;
+        [Range(1, 30000)]public int NumTeams = 1;
+        [Range(4, 100)]public int NumPassersPerTeam = 6;
         [Range(1, 20)]public int BotMoveSpeed = 3; // units per second
         [Range(1, 10)]public float LineMaxOffset = 4;
 
         [Header("Buckets")] 
         [Range(0.1f,1.0f)]public float BucketFillRate = 0.2f;
-        [Range(1, 150)]public int NumBuckets = 15;
+        [Range(1, 50000)]public int NumBuckets = 15;
         public Color BucketEmptyColor;
         public Color BucketFullColor;
         [Range(0.5f,0.8f)]public float BucketEmptyScale = 0.5f;
         [Range(1.2f,1.5f)]public float BucketFullScale = 1.5f;
 
         [Header("Ground")] 
-        [Range(10, 200)]public int GroundNumColumns =30;
-        [Range(10, 200)]public int GroundNumRows = 50;
+        [Range(10, 1000)]public int GroundNumColumns =30;
+        [Range(10, 1000)]public int GroundNumRows = 50;
 
         [Header("Heat")] 
         public Color MinHeatColor;
@@ -59,7 +59,7 @@ namespace FirefightersOptimized.Authorings
                     GroundNumRows = authoring.GroundNumRows,
                     NumPondsPerEdge = authoring.NumPondsPerEdge,
                     NumTeams = authoring.NumTeams,
-                    NumPassersPerTeam = authoring.NumPassersPerTeam,
+                    NumPassersPerTeam = (math.max(authoring.NumPassersPerTeam, 4) / 2) * 2, // round down to even number and set min to 4,
                     BotMoveSpeed = authoring.BotMoveSpeed,
                     LineMaxOffset = authoring.LineMaxOffset,
                     NumBuckets = math.max(authoring.NumBuckets, authoring.NumTeams), 

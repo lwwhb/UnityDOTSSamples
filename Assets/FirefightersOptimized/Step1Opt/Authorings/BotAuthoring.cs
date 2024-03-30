@@ -17,7 +17,7 @@ namespace FirefightersOptimized.Authorings
             }
         }
     }
-    
+
     public struct Bot : IComponentData
     {
         public BotState State;

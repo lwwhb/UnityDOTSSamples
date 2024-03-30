@@ -58,7 +58,6 @@ namespace FirefightersOptimized.Systems
                         Bucket = bucketEntities[teamIdx],
                         NumFiresDoused = 0
                     };
-                    state.EntityManager.AddSharedComponent(bucketEntities[teamIdx], new TeamID(){ team = teamEntity});
                     state.EntityManager.AddComponent<RepositionLine>(teamEntity);
                     
                     var rand = SystemAPI.GetSingletonRW<RandomSingleton>();
@@ -83,7 +82,7 @@ namespace FirefightersOptimized.Systems
                         if (botIdx == 0)
                         {
                             // 指定队伍的取水者
-                            state.EntityManager.AddComponent<Filler>(botEntity);
+                            team.Filler = botEntity;
                         }
                         else
                         {
@@ -114,7 +113,7 @@ namespace FirefightersOptimized.Systems
                         //指定灭火者
                         if(botIdx == douserIdx)
                         {
-                            state.EntityManager.AddComponent<Douser>(botEntity);
+                            team.Douser = botEntity;
                         }
                     }
                     state.EntityManager.AddComponentData(teamEntity, team);

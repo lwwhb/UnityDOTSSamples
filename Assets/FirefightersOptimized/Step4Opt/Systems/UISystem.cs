@@ -26,7 +26,7 @@ namespace FirefightersOptimized.Systems
             {
                 initialized = true;
 
-                configManaged.UIController = Object.FindObjectOfType<UIController>();
+                configManaged.UIController = Object.FindFirstObjectByType<UIController>();
             }
             
             var shouldReposition = configManaged.UIController.ShouldReposition();
