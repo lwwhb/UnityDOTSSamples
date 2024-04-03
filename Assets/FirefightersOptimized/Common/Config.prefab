@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 896a1542ddce494caaf9d8fd23daa8ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Seed: 1
   NumPondsPerEdge: 12
   NumTeams: 1
   NumPassersPerTeam: 6
@@ -61,7 +62,7 @@ MonoBehaviour:
   MaxHeatColor: {r: 1, g: 0, b: 0, a: 1}
   HeatSpreadSpeed: 0.03
   HeatOscillationScale: 0.2
-  NumInitialCellsOnFire: 0
+  NumInitialCellsOnFire: 1
   HeatDouseTargetMin: 0.3
   BotPrefab: {fileID: 7617736419631500257, guid: 3d7d8f68c19c44b2fbdbfee6b0b55679,
     type: 3}
@@ -71,5 +72,5 @@ MonoBehaviour:
     type: 3}
   GroundCellPrefab: {fileID: 3422103013957337004, guid: 184052717b6604667aa96d6593a4b02e,
     type: 3}
-  BotAnimatedPrefabGO: {fileID: 5701704621631426976, guid: 36e93c435d1648a4c86d516057a9cbe2,
+  BotAnimatedPrefabGO: {fileID: 5701704621631426976, guid: 05611190ce90f4b6aa9c78036a60a0f4,
     type: 3}
