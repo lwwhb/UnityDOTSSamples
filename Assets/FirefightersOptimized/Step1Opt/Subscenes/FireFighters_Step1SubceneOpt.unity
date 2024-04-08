@@ -185,12 +185,12 @@ PrefabInstance:
     - target: {fileID: 1807857524621112487, guid: 5630fea60f06a47969fc3ec1da499ad1,
         type: 3}
       propertyPath: NumTeams
-      value: 3000
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1807857524621112487, guid: 5630fea60f06a47969fc3ec1da499ad1,
         type: 3}
       propertyPath: NumBuckets
-      value: 15000
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1807857524621112487, guid: 5630fea60f06a47969fc3ec1da499ad1,
         type: 3}
